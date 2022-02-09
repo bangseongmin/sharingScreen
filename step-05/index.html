@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>Realtime communication with WebRTC</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <!--  화면 녹화 -->
+
+  <!--  화면 구성-->
+  <style>
+    video{
+      display: inline-block;
+      max-width: 25%;
+      max-height: 25%;
+      width: 25%;
+      height: 25%;
+      border: 3px solid black;
+      border-radius: 8px;
+    }
+    #localVideo{
+      background: firebrick;
+    }
+
+    .remoteVideo{
+      background: gray;
+    }
+  </style>
+</head>
+<body>
+  <h1>Realtime communication with WebRTC</h1>
+
+  <div id="videos">
+    <div>
+      <video id="localVideo" autoplay muted playsinline></video>
+      <video id="remoteVideo" autoplay playsinline></video>
+    </div>
+    <div>
+      <video class="remoteVideo" autoplay muted playsinline></video>
+      <video class="remoteVideo" autoplay playsinline></video>
+    </div>
+  </div>
+  <div id="container">
+    <button id="startButton" disabled>Start</button>
+    <div id="errorMsg"></div>
+  </div>
+
+  <!-- This file is automatically added/served when running "node index.js". -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+  <script src="js/main.js?ver=5"></script>
+  <script src="js/sharingScreen.js?ver=10"></script>
+</body>
+</html>
